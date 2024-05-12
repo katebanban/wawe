@@ -1,0 +1,27 @@
+// ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ (с ними можно работать из JS)
+:root {
+	// colors
+	--text-color: #242121;
+	--title-color: #01353E;
+	--decor-color: #00B2A0;
+	--menu-bg-color: #155861; // от себя
+	--white: #fff;
+	
+	// sizes
+	--container-width: 1200px;
+	--container-gap: 15px;
+	--header-height: 132px;
+
+	// fonts
+	--main-font: 'Roboto Condensed', sans-serif;
+	--second-font: 'Raleway', sans-serif;
+}
+
+// Функции CSS
+@function rem($px) {
+	@return calc(($px / 16) * 1rem);
+}
+
+@function lh($line-height, $font-size) {
+	@return calc(($line-height / $font-size) * 100%);
+}
