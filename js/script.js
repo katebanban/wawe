@@ -27,3 +27,37 @@ const headerActualHeight = header.offsetHeight; // создали перемен
 const root = document.querySelector(':root'); // нашли css-селектор root (хранилище глобальных переменных)
 
 root.style.setProperty('--header-height', `${headerActualHeight}px`); // заменили переменную с заданной высотой шапки из CSS на переменную с актуальной высотой шапки из JS
+
+
+//* ПЛАВНЫЙ СКРОЛЛ НА ВСЕ ССЫЛКИ ВНУТРИ СТРАНИЦЫ (+ перемещение К САМОМУ НАЧАЛУ секции для ссылок, ведущих к секциям на странице)
+
+const allLinks = document.querySelectorAll('a');
+
+allLinks.forEach((link) => {
+	link.addEventListener('click', (e) => {
+		const href = link.getAttribute('href');
+
+		if (href === "#") {
+			e.preventDefault();
+
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth',
+			})
+		}
+
+		if (href !== '#' && href.startsWith('#')) {
+			e.preventDefault();
+
+			// находим секцию, на которую ведёт нажатая ранее ссылка по href (адресу)
+			const sectionEl = document.querySelector(href);
+			// находим координаты самого верха (начала) секции
+			const sectionElPosition = sectionEl.getBoundingClientRect().top;
+
+			window.scrollBy({
+				top: sectionElPosition,
+				behavior: 'smooth',
+			})
+		}
+	})
+})
