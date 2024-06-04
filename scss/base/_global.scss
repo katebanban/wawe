@@ -85,7 +85,7 @@ body {
 	&::after {
 		content: "/";
 		position: absolute;
-		top: 20px;
+		bottom: -20px;
 		font-size: rem(72);
 		color: var(--decor-color);
 	}

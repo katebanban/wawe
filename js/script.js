@@ -29,6 +29,41 @@ const root = document.querySelector(':root'); // нашли css-селектор
 root.style.setProperty('--header-height', `${headerActualHeight}px`); // заменили переменную с заданной высотой шапки из CSS на переменную с актуальной высотой шапки из JS
 
 
+//* Скрыть HEADER при прокрутке вниз и показать его при прокрутке вверх
+const defaultOffset = headerActualHeight / 2; // то расстояние, после которого исчезнет header при скролле вниз
+let lastScroll = 0; // отвечает за последнюю позицию прокрутки, т.е. относительно него мы будем отмечать, куда мы скроллим страницу: вверх или вниз
+
+// функция, определяющая позицию скролла === где мы сейчас находимся
+const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+
+// функция, которая определяет, есть ли у нас класс hidden на header
+const containsHidden = () => header.classList.contains('hidden');
+
+window.addEventListener('scroll', () => {
+	
+	if (scrollPosition() > lastScroll && !containsHidden() && scrollPosition() > defaultOffset) {
+		// scroll down
+		header.classList.add('hidden');
+		console.log('down');
+	} else if (scrollPosition() < lastScroll && containsHidden()) {
+		// scroll up
+		header.classList.remove('hidden');
+		console.log('up');
+	}
+	
+
+	if (scrollPosition() > headerActualHeight) {
+		header.classList.add('bg-color');
+	}
+
+	if (scrollPosition() === 0) {
+		header.classList.remove('bg-color');
+	}
+	
+	lastScroll = scrollPosition();
+})
+
+
 //* ПЛАВНЫЙ СКРОЛЛ НА ВСЕ ССЫЛКИ ВНУТРИ СТРАНИЦЫ (+ перемещение К САМОМУ НАЧАЛУ секции для ссылок, ведущих к секциям на странице)
 
 const allLinks = document.querySelectorAll('a');
