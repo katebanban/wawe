@@ -774,3 +774,124 @@ body * {
   font-size: 24px;
   line-height: 75%;
 }
+
+.conquer {
+  background: var(--white);
+  --gap: 90px;
+  --width: 33%;
+  display: flex;
+  gap: 10px var(--gap);
+  padding-left: max(var(--container-gap), (100% - var(--container-width)) / 2);
+}
+.conquer > *:first-child {
+  flex: 0 0 var(--width);
+}
+.conquer > *:last-child {
+  flex: 0 1 calc(100% - var(--width) - var(--gap));
+}
+@media (max-width: 1440px) {
+  .conquer {
+    --width: 40%;
+  }
+}
+@media (max-width: 1024px) {
+  .conquer {
+    flex-direction: column;
+    padding: 0 var(--container-gap);
+  }
+}
+.conquer__info {
+  padding: 120px 0;
+}
+@media (max-width: 1024px) {
+  .conquer__info {
+    padding: 90px 0 40px;
+  }
+}
+@media (max-width: 550px) {
+  .conquer__info {
+    padding-top: 60px;
+  }
+}
+.conquer__title {
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .conquer__title {
+    font-size: 2.1875rem;
+    text-align: center;
+  }
+  .conquer__title::after {
+    font-size: 3.75rem;
+  }
+}
+@media (max-width: 768px) {
+  .conquer__title {
+    font-size: 1.5625rem;
+  }
+  .conquer__title::after {
+    font-size: 3.125rem;
+  }
+}
+@media (max-width: 550px) {
+  .conquer__title {
+    font-size: 1.4375rem;
+  }
+  .conquer__title::after {
+    display: none;
+  }
+}
+.conquer__title:not(:last-child) {
+  margin-bottom: 70px;
+}
+@media (max-width: 1024px) {
+  .conquer__title:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 550px) {
+  .conquer__title:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+.conquer__text p {
+  margin: 0;
+}
+.conquer__text p:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media (max-width: 550px) {
+  .conquer__text p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.conquer__image {
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .conquer__image {
+    padding-bottom: 45%;
+    margin: 0 calc(var(--container-gap) * -1);
+  }
+}
+@media (max-width: 768px) {
+  .conquer__image {
+    padding-bottom: 55%;
+  }
+}
+@media (max-width: 550px) {
+  .conquer__image {
+    padding-bottom: 70%;
+  }
+}
+.conquer__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
+}
