@@ -40,17 +40,15 @@ const scrollPosition = () => window.pageYOffset || document.documentElement.scro
 const containsHidden = () => header.classList.contains('hidden');
 
 window.addEventListener('scroll', () => {
-	
+
 	if (scrollPosition() > lastScroll && !containsHidden() && scrollPosition() > defaultOffset) {
 		// scroll down
 		header.classList.add('hidden');
-		console.log('down');
 	} else if (scrollPosition() < lastScroll && containsHidden()) {
 		// scroll up
 		header.classList.remove('hidden');
-		console.log('up');
 	}
-	
+
 
 	if (scrollPosition() > headerActualHeight) {
 		header.classList.add('bg-color');
@@ -59,7 +57,7 @@ window.addEventListener('scroll', () => {
 	if (scrollPosition() === 0) {
 		header.classList.remove('bg-color');
 	}
-	
+
 	lastScroll = scrollPosition();
 })
 
@@ -96,3 +94,60 @@ allLinks.forEach((link) => {
 		}
 	})
 })
+
+
+//* ТАБЫ ГАЛЛЕРЕИ (изменение цвета при нажатии)
+const allTabsBtns = document.querySelectorAll('.tabs__btn');
+
+// сделали изначально активной первую кнопку
+allTabsBtns[0].classList.add('active');
+
+// перебираем все кнопки
+allTabsBtns.forEach((tabsBtn) => {
+	// добавляем событие по клику на кнопку
+	tabsBtn.addEventListener('click', () => {
+		// снова перебираем все кнопки
+		allTabsBtns.forEach((tabsBtn) => {
+			// чтобы после клика убрать active со всех кнопок
+			tabsBtn.classList.remove('active');
+		})
+
+		// добавляем active конкретно нажатой кнопке
+		tabsBtn.classList.add('active');
+	})
+})
+
+
+//* ФИЛЬТРЫ ГАЛЛЕРЕИ (при нажатии на определённые табы появляются соответствующие данной категории карточки)
+const allGalleryCards = document.querySelectorAll('.gallery-list__item');
+
+// перебираем все кнопки-фильтры
+allTabsBtns.forEach((tabsBtn) => {
+	// чтобы добавить событие по клику
+	tabsBtn.addEventListener('click', () => {
+		// находим категорию конкретно нажатой кнопки
+		const currentBtnCategory = tabsBtn.getAttribute('data-filter-btn');
+
+		// перебираем все карточки
+		allGalleryCards.forEach((galleryCard) => {
+			// убираем класс hidden у ВСЕХ карточек (это нужно, чтобы при выборе каждой следующей категории сбросить предыдущую)
+			galleryCard.classList.remove('hidden');
+
+			// прячем все карточки, у которых значение атрибута data-filter-category НЕ СОВПАДАЕТ со значением атрибута data-filter-btn
+			if (!galleryCard.getAttribute('data-filter-category').includes(currentBtnCategory)) {
+				galleryCard.classList.add('hidden');
+			}
+
+			// если у нажатой кнопки значение атрибута data-filter-btn включает в себя all, то мы со всех карточек убираем класс hidden (т.е. показываем ВСЕ карточки)
+			if (currentBtnCategory.includes('all')) {
+				galleryCard.classList.remove('hidden');
+			}
+		})
+	})
+})
+
+
+//* FANCYBOX (Галлерея)
+Fancybox.bind("[data-fancybox]", {
+	// Your custom options
+});
