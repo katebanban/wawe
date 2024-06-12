@@ -7,9 +7,11 @@
 	<title>WAWE</title>
 
 	<link href="libs/normalize.css" rel="stylesheet">
+	<link href="libs/fancybox/fancybox.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
 	<!-- ! defer для скриптов в head ОБЯЗАТЕЛЕН -->
+	<script src="libs/fancybox/fancybox.umd.js" defer></script>
 	<script src="js/script.js" defer></script>
 </head>
 
@@ -281,6 +283,72 @@
 				</div>
 				<div class="conquer__image">
 					<img src="images/conquer/bg.jpg" alt="conquer background">
+				</div>
+			</section>
+			<section class="gallery">
+				<div class="container">
+					<div class="gallery__body">
+						<h2 class="gallery__title section-title">
+							Галерея
+						</h2>
+						<ul class="gallery__tabs tabs">
+							<li class="tabs__item">
+								<button class="tabs__btn" type="button" data-filter-btn="all">
+									Все
+								</button>
+							</li>
+							<li class="tabs__item">
+								<button class="tabs__btn" type="button" data-filter-btn="tourists">
+									Туристы
+								</button>
+							</li>
+							<li class="tabs__item">
+								<button class="tabs__btn" type="button" data-filter-btn="nature">
+									Природа
+								</button>
+							</li>
+							<li class="tabs__item">
+								<button class="tabs__btn" type="button" data-filter-btn="pros">
+									Профи
+								</button>
+							</li>
+						</ul>
+						<ul class="gallery__list gallery-list">
+							<li class="gallery-list__item" data-filter-category="pros">
+								<a class="gallery-list__link" href="images/gallery/image-1.jpg" data-fancybox="gallery">
+									<img src="images/gallery/image-1.jpg" alt="gallery image 1">
+								</a>
+							</li>
+							<li class="gallery-list__item" data-filter-category="tourists">
+								<a class="gallery-list__link" href="images/gallery/image-2.jpg" data-fancybox="gallery">
+									<img src="images/gallery/image-2.jpg" alt="gallery image 2">
+								</a>
+							</li>
+							<li class="gallery-list__item" data-filter-category="tourists">
+								<a class="gallery-list__link" href="images/gallery/image-3.jpg" data-fancybox="gallery">
+									<img src="images/gallery/image-3.jpg" alt="gallery image 3">
+								</a>
+							</li>
+							<li class="gallery-list__item" data-filter-category="pros">
+								<a class="gallery-list__link" href="images/gallery/image-4.jpg" data-fancybox="gallery">
+									<img src="images/gallery/image-4.jpg" alt="gallery image 4">
+								</a>
+							</li>
+							<li class="gallery-list__item" data-filter-category="nature">
+								<a class="gallery-list__link" href="images/gallery/image-5.jpg" data-fancybox="gallery">
+									<img src="images/gallery/image-5.jpg" alt="gallery image 5">
+								</a>
+							</li>
+							<li class="gallery-list__item" data-filter-category="tourists">
+								<a class="gallery-list__link" href="images/gallery/image-6.jpg" data-fancybox="gallery">
+									<img src="images/gallery/image-6.jpg" alt="gallery image 6">
+								</a>
+							</li>
+						</ul>
+						<a class="gallery__btn" href="#">
+							Показать еще
+						</a>
+					</div>
 				</div>
 			</section>
 		</main>
