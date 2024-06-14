@@ -1,0 +1,50 @@
+.quote {
+	background: var(--bg-sec-color);
+	padding: 80px 0;
+
+	@media (max-width: 550px) {
+		padding: 60px 0;
+	}
+
+	.container {
+		--container-width: 870px;
+	}
+
+	&__blockquote {
+		margin: 0;
+	}
+
+	&__text {
+		margin: 0;
+		text-align: center;
+
+		font-weight: 400;
+		font-style: italic;
+		font-size: rem(36);
+		line-height: 110%;
+
+		@media (max-width: 768px) {
+			font-size: rem(30);
+		}
+		
+		@media (max-width: 550px) {
+			font-size: rem(28);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 10px; // от себя
+		}
+	}
+
+	&__author {
+		margin: 0;
+		text-align: right;
+
+		font-style: italic;
+		line-height: 130%;
+
+		@media (max-width: 550px) {
+			text-align: center;
+		}
+	}
+}
