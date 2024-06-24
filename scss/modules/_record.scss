@@ -1,0 +1,55 @@
+.record {
+	background: var(--white);
+	padding: 120px 0; // от себя
+
+	@media (max-width: 1024px) {
+		padding: 90px 0;
+	}
+	
+	@media (max-width: 550px) {
+		padding: 60px 0;
+	}
+
+	.container {
+		--container-width: 870px;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		display: flex;
+		justify-content: center;
+		gap: 100px;
+
+		@media (max-width: 1024px) {
+			gap: 30px 80px;
+		}
+		
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+		}
+
+		@media (max-width: 550px) {
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		text-align: center;
+
+		span {
+			display: block;
+			margin-bottom: 5px;
+
+			color: var(--title-color);
+			font-weight: 700;
+			font-size: rem(64);
+
+			@media (max-width: 550px) {
+				font-size: rem(55);
+			}
+		}
+	}
+}
