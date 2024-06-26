@@ -1,0 +1,159 @@
+.blog {
+	background: var(--white);
+
+	&__title {
+		text-align: center;
+		margin: 0;
+		margin-bottom: 70px; // от себя
+
+		@media (max-width: 1024px) {
+			font-size: rem(35);
+
+			&::after {
+				font-size: rem(60);
+			}
+		}
+
+		@media (max-width: 768px) {
+			font-size: rem(25);
+
+			&::after {
+				font-size: rem(50);
+			}
+		}
+
+		@media (max-width: 550px) {
+			font-size: rem(23);
+
+			&::after {
+				display: none;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			margin-bottom: 60px;
+		}
+
+		@media (max-width: 550px) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__slider {
+	}
+
+	&__slide {
+	}
+
+	&__pagination {
+		position: absolute;
+		z-index: 2;
+		bottom: 10% !important; // на глаз
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+
+		.swiper-pagination-bullet {
+			margin: 0 !important;
+			width: 15px;
+			height: 15px;
+			background: var(--white);
+			opacity: 1;
+			transition: all .3s;
+		}
+
+		.swiper-pagination-bullet-active {
+			background: var(--decor-color);
+		}
+	}
+}
+
+.slide-blog {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--text-color);
+		opacity: 0.5;
+	}
+
+	// по сути это наш привычный body
+	&__container {
+		min-height: 75dvh; // от себя
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+
+		position: relative;
+		z-index: 2; // чтобы контент был выше тёмной подложки слайда
+
+		@media (max-width: 550px) {
+			align-items: flex-start;
+		}
+	}
+
+	&__content {
+		max-width: 50%;
+		color: var(--white);
+
+		@media (max-width: 550px) {
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		margin: 0;
+
+		@media (max-width: 768px) {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: rem(48);
+		color: inherit;
+
+		@media (max-width: 1200px) {
+			font-size: rem(40);
+		}
+
+		@media (max-width: 1024px) {
+			font-size: rem(30);
+		}
+
+		@media (max-width: 768px) {
+			font-size: rem(22);
+		}
+
+		// хоть мы и задали этот псевдокласс ссылке, но запозиционируется он относительно всего слайда (там в стилях по умолчанию есть position: relative;) и таким образом весь слайд станет ссылкой
+		// !!! КОНКРЕТНО В ЭТОМ МАКЕТЕ ПРИШЛОСЬ ИЗ-ЗА ТЁМНОЙ ПОДЛОЖКИ НА СЛАЙДЕ НЕМНОГО ИЗМЕНИТЬ ЭТУ СТРУКТУРУ, ТУТ НЕ ВЕСЬ СЛАЙД БУДЕТ ССЫЛКОЙ, А ВЕСЬ КОНТЕЙНЕР !!!
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__text {
+		margin: 0;
+	}
+}

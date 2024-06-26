@@ -151,3 +151,17 @@ allTabsBtns.forEach((tabsBtn) => {
 Fancybox.bind("[data-fancybox]", {
 	// Your custom options
 });
+
+
+//* SWIPER
+const swiper = new Swiper('.blog__slider', {
+	// Optional parameters
+	loop: true,
+	spaceBetween: 10, // от себя
+
+	// If we need pagination
+	pagination: {
+		el: '.blog__pagination',
+		clickable: true,
+	},
+});
