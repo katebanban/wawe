@@ -8,10 +8,12 @@
 
 	<link href="libs/normalize.css" rel="stylesheet">
 	<link href="libs/fancybox/fancybox.css" rel="stylesheet">
+	<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
 	<!-- ! defer для скриптов в head ОБЯЗАТЕЛЕН -->
 	<script src="libs/fancybox/fancybox.umd.js" defer></script>
+	<script src="libs/swiper/swiper-bundle.min.js" defer></script>
 	<script src="js/script.js" defer></script>
 </head>
 
@@ -44,7 +46,7 @@
 								</a>
 							</li>
 							<li class="menu__item">
-								<a class="menu__link" href="#">
+								<a class="menu__link" href="#blog">
 									Блог
 								</a>
 							</li>
@@ -411,6 +413,97 @@
 							<span>365</span> дней в году
 						</li>
 					</ul>
+				</div>
+			</section>
+			<section class="blog" id="blog">
+				<div class="container">
+					<h2 class="blog__title section-title">
+						Блог
+					</h2>
+				</div>
+				<!-- Slider main container -->
+				<div class="blog__slider swiper">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="blog__slide slide-blog swiper-slide"
+							style="background-image: url('images/slider/slide.jpg');">
+							<div class="slide-blog__container container">
+								<div class="slide-blog__content">
+									<h3 class="slide-blog__title">
+										<a class="slide-blog__link" href="#">
+											Что необходимо взять с собой на сёрф тур
+										</a>
+									</h3>
+									<p class="slide-blog__text">
+										ТОП 20 необходимых вещей для комфортного отдыха и обучения
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="blog__slide slide-blog swiper-slide"
+							style="background-image: url('images/slider/slide.jpg');">
+							<div class="slide-blog__container container">
+								<div class="slide-blog__content">
+									<h3 class="slide-blog__title">
+										<a class="slide-blog__link" href="#">
+											Что необходимо взять с собой на сёрф тур
+										</a>
+									</h3>
+									<p class="slide-blog__text">
+										ТОП 20 необходимых вещей для комфортного отдыха и обучения
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="blog__slide slide-blog swiper-slide"
+							style="background-image: url('images/slider/slide.jpg');">
+							<div class="slide-blog__container container">
+								<div class="slide-blog__content">
+									<h3 class="slide-blog__title">
+										<a class="slide-blog__link" href="#">
+											Что необходимо взять с собой на сёрф тур
+										</a>
+									</h3>
+									<p class="slide-blog__text">
+										ТОП 20 необходимых вещей для комфортного отдыха и обучения
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="blog__slide slide-blog swiper-slide"
+							style="background-image: url('images/slider/slide.jpg');">
+							<div class="slide-blog__container container">
+								<div class="slide-blog__content">
+									<h3 class="slide-blog__title">
+										<a class="slide-blog__link" href="#">
+											Что необходимо взять с собой на сёрф тур
+										</a>
+									</h3>
+									<p class="slide-blog__text">
+										ТОП 20 необходимых вещей для комфортного отдыха и обучения
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="blog__slide slide-blog swiper-slide"
+							style="background-image: url('images/slider/slide.jpg');">
+							<div class="slide-blog__container container">
+								<div class="slide-blog__content">
+									<h3 class="slide-blog__title">
+										<a class="slide-blog__link" href="#">
+											Что необходимо взять с собой на сёрф тур
+										</a>
+									</h3>
+									<p class="slide-blog__text">
+										ТОП 20 необходимых вещей для комфортного отдыха и обучения
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- If we need pagination -->
+					<div class="blog__pagination"></div>
 				</div>
 			</section>
 		</main>
