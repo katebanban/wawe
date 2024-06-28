@@ -1395,6 +1395,8 @@ body * {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
   z-index: 2;
 }
@@ -1452,4 +1454,132 @@ body * {
 }
 .slide-blog__text {
   margin: 0;
+}
+
+.team {
+  padding: 120px 0;
+}
+@media (max-width: 1024px) {
+  .team {
+    padding: 90px 0;
+  }
+}
+@media (max-width: 550px) {
+  .team {
+    padding: 60px 0;
+  }
+}
+.team__title {
+  margin: 0;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .team__title {
+    font-size: 2.1875rem;
+  }
+  .team__title::after {
+    font-size: 3.75rem;
+  }
+}
+@media (max-width: 768px) {
+  .team__title {
+    font-size: 1.5625rem;
+  }
+  .team__title::after {
+    font-size: 3.125rem;
+  }
+}
+@media (max-width: 550px) {
+  .team__title {
+    font-size: 1.4375rem;
+  }
+  .team__title::after {
+    display: none;
+  }
+}
+.team__title:not(:last-child) {
+  margin-bottom: 70px;
+}
+@media (max-width: 1024px) {
+  .team__title:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 550px) {
+  .team__title:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+.team__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 105px;
+}
+@media (max-width: 1200px) {
+  .team__list {
+    gap: 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .team__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
+  }
+}
+@media (max-width: 768px) {
+  .team__list {
+    gap: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .team__list {
+    grid-template-columns: 1fr;
+  }
+}
+.team__item {
+  text-align: center;
+}
+.team__image {
+  position: relative;
+  min-height: 450px;
+}
+.team__image:not(:last-child) {
+  margin-bottom: 25px;
+}
+.team__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .team__image img {
+    -o-object-position: top;
+       object-position: top;
+  }
+}
+@media (max-width: 768px) {
+  .team__image img {
+    -o-object-position: top right;
+       object-position: top right;
+  }
+}
+.team__name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 100%;
+}
+.team__name:not(:last-child) {
+  margin-bottom: 5px;
+}
+.team__position {
+  margin: 0;
+  font-weight: 400;
 }
