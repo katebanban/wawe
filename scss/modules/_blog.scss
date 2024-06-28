@@ -93,6 +93,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-end;
+		padding-top: 30px; // отступ безопасности
+		padding-bottom: 30px; // отступ безопасности
 
 		position: relative;
 		z-index: 2; // чтобы контент был выше тёмной подложки слайда
