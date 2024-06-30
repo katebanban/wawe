@@ -1,0 +1,162 @@
+.prices {
+	background: var(--bg-sec-color);
+	padding: 120px 0; // от себя
+
+	@media (max-width: 1024px) {
+		padding: 90px 0;
+	}
+
+	@media (max-width: 550px) {
+		padding: 60px 0;
+	}
+
+	&__title {
+		margin: 0;
+		text-align: center;
+
+		@media (max-width: 1024px) {
+			font-size: rem(35);
+
+			&::after {
+				font-size: rem(60);
+			}
+		}
+
+		@media (max-width: 768px) {
+			font-size: rem(25);
+
+			&::after {
+				font-size: rem(50);
+			}
+		}
+
+		@media (max-width: 550px) {
+			font-size: rem(23);
+
+			&::after {
+				display: none;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 70px; // от себя
+
+			@media (max-width: 1024px) {
+				margin-bottom: 60px;
+			}
+
+			@media (max-width: 550px) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__cards {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 60px;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		background: var(--white);
+		padding: 45px 30px;
+		text-align: center;
+
+		@media (max-width: 550px) {
+			padding: 40px 15px;
+		}
+	}
+}
+
+.prices-card {
+	&__title {
+		margin: 0;
+
+		font-weight: 400;
+		font-size: rem(36);
+		line-height: 110%;
+		color: var(--title-color);
+
+		@media (max-width: 768px) {
+			font-size: rem(25);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 60px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		flex: 1 1 auto;
+
+		text-align: left;
+
+		@media (max-width: 768px) {
+			text-align: center;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 60px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__item {
+		font-weight: 400;
+	}
+
+	&__cost {
+		margin: 0;
+
+		span {
+			font-weight: 400;
+			font-size: rem(36);
+			line-height: 110%;
+			color: var(--title-color);
+			position: relative;
+
+			@media (max-width: 768px) {
+				font-size: rem(30);
+			}
+
+			&::after {
+				content: "$";
+				font-size: rem(18);
+
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: -15px;
+			}
+		}
+	}
+}
