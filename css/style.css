@@ -1740,3 +1740,31 @@ body * {
   transform: translateY(-50%);
   right: -15px;
 }
+
+.map {
+  background: var(--white);
+  padding-top: 120px;
+}
+@media (max-width: 1024px) {
+  .map {
+    padding-top: 90px;
+  }
+}
+@media (max-width: 550px) {
+  .map {
+    padding-top: 60px;
+  }
+}
+.map__box {
+  filter: saturate(0);
+  transition: all 0.3s;
+}
+@media (any-hover: hover) {
+  .map__box:hover {
+    filter: unset;
+  }
+}
+.map__box iframe {
+  width: 100%;
+  height: 70dvh;
+}
