@@ -1,0 +1,269 @@
+.contacts {
+	padding: 120px 0; // от себя
+
+	@media (max-width: 1024px) {
+		padding: 90px 0;
+	}
+
+	@media (max-width: 550px) {
+		padding: 60px 0;
+	}
+
+	&__title {
+		margin: 0;
+		text-align: center;
+
+		@media (max-width: 1024px) {
+			font-size: rem(35);
+
+			&::after {
+				font-size: rem(60);
+			}
+		}
+
+		@media (max-width: 768px) {
+			font-size: rem(25);
+
+			&::after {
+				font-size: rem(50);
+			}
+		}
+
+		@media (max-width: 550px) {
+			font-size: rem(23);
+
+			&::after {
+				display: none;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 70px; // от себя
+
+			@media (max-width: 1024px) {
+				margin-bottom: 60px;
+			}
+
+			@media (max-width: 550px) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 120px; // от себя
+
+			@media (max-width: 1024px) {
+				margin-bottom: 90px;
+			}
+
+			@media (max-width: 550px) {
+				margin-bottom: 60px;
+			}
+		}
+	}
+
+	&__form {
+		flex: 0 1 50%;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__info {
+		flex: 0 1 50%;
+	}
+
+	&__socials {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		display: flex;
+	}
+}
+
+.contacts-form {
+	padding-right: 30px;
+
+	@media (max-width: 768px) {
+		padding-right: unset;
+	}
+
+	&__input {
+		border: none;
+		border-bottom: 2px solid var(--tabs-hover);
+		padding: 0 0 18px;
+		outline-color: var(--decor-color);
+
+		font-weight: 400;
+		font-size: rem(18);
+		line-height: 100%;
+		letter-spacing: inherit;
+		color: var(--text-color);
+
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+
+		&::placeholder {
+			font-weight: 400;
+			font-size: rem(18);
+			line-height: 100%;
+			letter-spacing: inherit;
+			color: var(--decor-color);
+		}
+	}
+
+	&__message {
+		resize: none;
+		border: none;
+		border-bottom: 2px solid var(--tabs-hover);
+		min-height: 156px;
+		padding: 0 0 18px;
+		margin-top: 20px;
+		outline-color: var(--decor-color);
+
+		font-weight: 400;
+		font-size: rem(18);
+		line-height: 100%;
+		letter-spacing: inherit;
+		color: var(--text-color);
+
+		&:not(:last-child) {
+			margin-bottom: 70px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 60px;
+			}
+		}
+
+		&::placeholder {
+			font-weight: 400;
+			font-size: rem(18);
+			line-height: 100%;
+			letter-spacing: inherit;
+			color: var(--decor-color);
+		}
+	}
+
+	&__btn {
+		background: transparent;
+		border: 2px solid var(--tabs-hover);
+		outline-color: var(--decor-color);
+		max-width: 350px;
+		padding: 24px;
+
+		font-size: rem(24);
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: inherit;
+		color: var(--text-color);
+		text-transform: uppercase;
+		transition: all 0.3s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--decor-color);
+				border-color: var(--decor-color);
+			}
+		}
+
+		@media (max-width: 768px) {
+			margin: 0 auto 60px;
+			width: 350px;
+		}
+
+		@media (max-width: 550px) {
+			margin: 0 auto 60px;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+.contacts-info {
+	background: var(--bg-sec-color);
+	padding: 50px;
+
+	font-weight: 400;
+	font-size: rem(24);
+
+	@media (max-width: 1024px) {
+		padding: 40px;
+	}
+
+	@media (max-width: 550px) {
+		padding: 30px;
+	}
+
+	&__text {
+		margin: 0;
+
+		&:nth-child(2) {
+			margin-bottom: 65px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__number {
+		outline-color: var(--decor-color);
+		display: inline-block;
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.3s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--decor-color);
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 65px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__address {
+		margin: 0;
+		max-width: 330px;
+	}
+}
+
+.contacts-socials {
+	justify-content: center;
+	gap: 15px;
+
+	&__item {
+	}
+
+	&__link {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: inherit;
+		font-weight: 400;
+		font-size: rem(24);
+		transition: all 0.3s;
+		outline-color: var(--decor-color);
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--decor-color);
+			}
+		}
+	}
+}

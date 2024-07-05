@@ -56,7 +56,7 @@
 								</a>
 							</li>
 							<li class="menu__item">
-								<a class="menu__link" href="#">
+								<a class="menu__link" href="#contacts">
 									Контакты
 								</a>
 							</li>
@@ -609,7 +609,7 @@
 					</ul>
 				</div>
 			</section>
-			<section class="map">
+			<!--<section class="map">
 				<h2 class="visually-hidden">
 					Где нас найти
 				</h2>
@@ -619,8 +619,67 @@
 						width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
 						referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
+			</section>-->
+			<section class="contacts" id="contacts">
+				<div class="container">
+					<h2 class="contacts__title section-title">
+						Оставить заявку
+					</h2>
+					<div class="contacts__content">
+						<form class="contacts__form contacts-form">
+							<input class="contacts-form__input" type="text" name="name" placeholder="Имя" required>
+							<input class="contacts-form__input" type="tel" name="phone" placeholder="Телефон" required>
+							<textarea class="contacts-form__message" name="text"
+								placeholder="Оставьте сообщение, и мы свяжемся с Вами в ближайшее время" required></textarea>
+							<button class="contacts-form__btn" type="submit">Отправить</button>
+						</form>
+						<div class="contacts__info contacts-info">
+							<p class="contacts-info__text">
+								Есть вопрос?
+							</p>
+							<p class="contacts-info__text">
+								Вы можете связаться с нами:
+							</p>
+							<p class="contacts-info__text">
+								WhatsApp, Viber, Telegram
+							</p>
+							<a class="contacts-info__number" href="tel:+3 467 486-37-88">
+								+3 467 486-37-88
+							</a>
+							<p class="contacts-info__address">
+								Avenida grandes playas 79, Corralejo la Oliva Fuerteventura, Spain. 35660
+							</p>
+						</div>
+					</div>
+					<ul class="contacts__socials contacts-socials">
+						<li class="contacts-socials__item">
+							<a class="contacts-socials__link" href="#">
+								Instagram
+							</a>
+						</li>
+						<li class="contacts-socials__item">
+							<a class="contacts-socials__link" href="#">
+								Facebook
+							</a>
+						</li>
+						<li class="contacts-socials__item">
+							<a class="contacts-socials__link" href="#">
+								Youtube
+							</a>
+						</li>
+					</ul>
+				</div>
 			</section>
 		</main>
+		<footer class="footer">
+			<a class="footer__logo" href="#">
+				<svg width="60" height="48" viewBox="0 0 60 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M38.02 0.511943H33.412L37.768 12.1399L34.6 20.2759L27.328 0.439941H22L31.6958 24.7651L25.308 42.2759L22.068 34.1399L26.46 22.5119H21.888L18.936 30.9719L16.02 22.5119H11.412L15.768 34.1399L12.6 42.2759L5.328 22.4399H0L10.188 47.9999H14.472L18.936 37.2719L23.436 47.9999H27.72L37.712 23.02L40.936 15.2719L45.436 25.9999H49.72L59.944 0.439941H54.544L47.308 20.2759L44.068 12.1399L48.46 0.511943H43.888L40.936 8.97194L38.02 0.511943Z"
+						fill="white" />
+				</svg>
+			</a>
+		</footer>
 	</div>
 </body>
 

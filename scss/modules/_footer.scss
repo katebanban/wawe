@@ -1,0 +1,28 @@
+.footer {
+	background: var(--decor-color);
+	padding: 70px 0;
+	text-align: center;
+
+	@media (max-width: 1024px) {
+		padding: 50px 0;
+	}
+
+	@media (max-width: 550px) {
+		padding: 30px 0;
+	}
+
+	&__logo {
+		display: inline-block;
+		transition: all .3s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		svg {
+			display: block;
+		}
+	}
+}
