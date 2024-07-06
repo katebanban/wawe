@@ -69,6 +69,8 @@ const allLinks = document.querySelectorAll('a');
 allLinks.forEach((link) => {
 	link.addEventListener('click', (e) => {
 		const href = link.getAttribute('href');
+		const headerHeight = document.querySelector('header.header').offsetHeight;
+		//console.log(headerHeight);
 
 		if (href === "#") {
 			e.preventDefault();
@@ -86,9 +88,11 @@ allLinks.forEach((link) => {
 			const sectionEl = document.querySelector(href);
 			// находим координаты самого верха (начала) секции
 			const sectionElPosition = sectionEl.getBoundingClientRect().top;
+			// находим координаты начала секции с учётом размера шапки сверху (чтоб шапка не налазила на секцию, а стояла ПЕРЕД ней)
+			let offsetPosition = sectionElPosition - headerHeight;
 
 			window.scrollBy({
-				top: sectionElPosition,
+				top: offsetPosition,
 				behavior: 'smooth',
 			})
 		}
